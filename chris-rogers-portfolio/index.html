@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christopher Rogers — Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16130F;
+    --ink-raised: #1D1A14;
+    --parchment: #EDE6D8;
+    --parchment-dim: #B7AF9E;
+    --brass: #C39F68;
+    --brass-dim: #8A6F45;
+    --ember: #B24B38;
+    --verdigris: #6B9484;
+    --line: #3A332A;
+    --display: 'Cinzel', serif;
+    --body: 'DM Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--parchment);
+    font-family: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--brass); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Hero ---------- */
+
+  header.hero {
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-mark {
+    font-family: var(--body);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: var(--brass-dim);
+    margin: 0 0 18px;
+  }
+
+  h1.name {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin: 0 0 12px;
+    color: var(--parchment);
+    letter-spacing: 0.01em;
+  }
+
+  p.role {
+    font-size: 1.15rem;
+    color: var(--parchment-dim);
+    max-width: 46ch;
+    margin: 0 0 28px;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.95rem;
+  }
+
+  .links a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--brass-dim);
+    padding-bottom: 2px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .links a:hover {
+    border-color: var(--brass);
+    color: #DDB77F;
+  }
+
+  .exp-list {
+    list-style: none;
+    margin: 40px 0 0;
+    padding: 0;
+  }
+
+  .exp-list li {
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .exp-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .exp-role {
+    font-family: var(--display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--parchment);
+  }
+
+  .exp-dates {
+    font-size: 0.82rem;
+    color: var(--brass-dim);
+    white-space: nowrap;
+  }
+
+  .exp-company {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--parchment-dim);
+    margin: 4px 0 10px;
+  }
+
+  p.exp-highlight {
+    font-size: 0.92rem;
+    color: var(--parchment-dim);
+    margin: 0;
+    max-width: 62ch;
+  }
+
+  p.exp-more {
+    font-size: 0.85rem;
+    color: var(--parchment-dim);
+    margin: 20px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+
+  /* ---------- Section headings ---------- */
+
+  section { padding: 64px 0; }
+  section + section { border-top: 1px solid var(--line); }
+
+  h2.section-title {
+    font-family: var(--display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--parchment);
+    margin: 0 0 8px;
+  }
+
+  p.section-sub {
+    color: var(--parchment-dim);
+    margin: 0 0 40px;
+    max-width: 56ch;
+  }
+
+  /* ---------- Project cards ---------- */
+
+  .binder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  @media (max-width: 680px) {
+    .binder { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    position: relative;
+    background: var(--ink-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 24px 24px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 40%, rgba(195, 159, 104, 0.14) 50%, transparent 60%);
+    background-size: 250% 250%;
+    background-position: 200% 200%;
+    transition: background-position 0.7s ease;
+    pointer-events: none;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+  }
+
+  .card.brass:hover { border-color: var(--brass-dim); }
+  .card.verdigris:hover { border-color: var(--verdigris); }
+
+  .card:hover::before {
+    background-position: 0% 0%;
+  }
+
+  .card-kicker {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 16px;
+  }
+
+  .card.brass .card-kicker {
+    color: var(--ink);
+    background: var(--brass);
+  }
+
+  .card.verdigris .card-kicker {
+    color: var(--ink);
+    background: var(--verdigris);
+  }
+
+  h3.card-title {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 12px;
+    color: var(--parchment);
+  }
+
+  p.card-desc {
+    font-size: 0.94rem;
+    color: var(--parchment-dim);
+    margin: 0 0 20px;
+    min-height: 4.5em;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+
+  .chip {
+    font-size: 0.75rem;
+    color: var(--parchment-dim);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 3px 8px;
+  }
+
+  .card-links {
+    display: flex;
+    gap: 16px;
+    font-size: 0.88rem;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+
+  .card-links a {
+    text-decoration: none;
+    color: var(--parchment);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .card-links a:hover {
+    color: var(--brass);
+    border-color: var(--brass-dim);
+  }
+
+  .card-note {
+    margin-top: 16px;
+    font-size: 0.82rem;
+    color: var(--parchment-dim);
+    border-left: 2px solid var(--brass-dim);
+    padding-left: 10px;
+  }
+
+  /* ---------- In progress ---------- */
+
+  .progress-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .progress-list li {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+    color: var(--parchment-dim);
+  }
+
+  .progress-list li:last-child { border-bottom: none; }
+
+  .dot {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ember);
+    margin-top: 7px;
+  }
+
+  .progress-list strong {
+    color: var(--parchment);
+    font-weight: 600;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    padding: 40px 0 60px;
+    font-size: 0.85rem;
+    color: var(--parchment-dim);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="hero-mark">satorntcg</p>
+    <h1 class="name">Christopher Rogers</h1>
+    <p class="role">Director, AI Center of Excellence at Mastercard by day — leading enterprise AI and data platforms at scale. Outside of that, I build and run SatornTCG, a trading-card resale business, using it as a proving ground for the same class of tools I work with professionally, including hands-on MCP and LLM tool-use.</p>
+    <nav class="links">
+      <a href="Christopher_Rogers_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <a href="https://www.linkedin.com/in/chris-rogers-ai" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:christopher.rogers.tech@gmail.com">Email</a>
+      <a href="https://github.com/satorntcg" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://satorntcg.com" target="_blank" rel="noopener">satorntcg.com</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">Background</h2>
+    <p class="section-sub">18+ years scaling AI and data platforms in Fortune 500 environments — most recently leading global engineering teams at Mastercard supporting 2,000+ users on enterprise AI infrastructure, including Kubernetes-based ML platforms and internal LLM tooling. The projects below are where I get hands-on personally with current agentic-AI tooling, including the Model Context Protocol.</p>
+
+    <ul class="exp-list">
+      <li>
+        <div class="exp-head">
+          <span class="exp-role">Director, AI Center of Excellence / Platform Engineering</span>
+          <span class="exp-dates">2021–2026</span>
+        </div>
+        <span class="exp-company">Mastercard</span>
+        <p class="exp-highlight">Led a global team of 11 engineers supporting 2,000+ users; migrated 6,000 notebooks across 1,000+ servers to Cloudera AI, and built an AI-powered support chatbot that cut ticket volume 30%.</p>
+      </li>
+      <li>
+        <div class="exp-head">
+          <span class="exp-role">Principal Architect, Data Science &amp; AI Platforms</span>
+          <span class="exp-dates">2013–2021</span>
+        </div>
+        <span class="exp-company">Mastercard</span>
+        <p class="exp-highlight">Built the org's first enterprise open-source Python distribution (100+ libraries, PCI-compliant) and enabled fraud-detection analytics processing 143B+ transactions annually via graph database technologies.</p>
+      </li>
+      <li>
+        <div class="exp-head">
+          <span class="exp-role">Lead Developer → Senior Business Analyst → Senior Developer</span>
+          <span class="exp-dates">2007–2013</span>
+        </div>
+        <span class="exp-company">Mastercard</span>
+        <p class="exp-highlight">Drove Hadoop modernization scaling beyond 2 petabytes and led enterprise reporting migration off Business Objects, cutting platform costs 33%.</p>
+      </li>
+    </ul>
+    <p class="exp-more">Full history, including earlier roles at PepsiCo and education/certifications (MBA, BS Computer Science, MCP: Hands-On with Agentic AI), is in the <a href="Christopher_Rogers_Resume.pdf" target="_blank" rel="noopener">resume</a>.</p>
+  </section>
+
+  <section id="work">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">Two pieces of the same system: the commerce platform the business runs on, and the tooling that lets an LLM query it directly.</p>
+
+    <div class="binder">
+
+      <article class="card brass">
+        <span class="card-kicker">Live product</span>
+        <h3 class="card-title">satorntcg-webapp</h3>
+        <p class="card-desc">The commerce platform behind SatornTCG: inventory, pricing alerts, eBay/TCGplayer listing management, and profit &amp; loss tracking for a live trading-card resale operation, backed by Postgres.</p>
+        <div class="stack">
+          <span class="chip">Vite</span>
+          <span class="chip">React</span>
+          <span class="chip">Supabase</span>
+          <span class="chip">Postgres</span>
+          <span class="chip">Edge Functions</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/satorntcg/satorntcg-webapp" target="_blank" rel="noopener">Repo</a>
+          <a href="https://satorntcg.com" target="_blank" rel="noopener">Live site</a>
+        </div>
+      </article>
+
+      <article class="card verdigris">
+        <span class="card-kicker">Developer tool</span>
+        <h3 class="card-title">satorntcg-mcpserver</h3>
+        <p class="card-desc">An MCP server that exposes the same inventory, pricing, and P&amp;L data as callable tools for LLM clients — so an AI assistant can answer real questions against live business data instead of a canned demo set.</p>
+        <div class="stack">
+          <span class="chip">Node.js</span>
+          <span class="chip">MCP SDK</span>
+          <span class="chip">Supabase JS</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/satorntcg/satorntcg-mcpserver" target="_blank" rel="noopener">Repo</a>
+        </div>
+        <p class="card-note">Diagnosed and fixed a Windows TLS-interception issue that only surfaced when the server was launched by a GUI client rather than a terminal — documented in the README. Built as hands-on follow-through on MCP: Hands-On with Agentic AI.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="progress">
+    <h2 class="section-title">Currently building</h2>
+    <p class="section-sub">Both projects are active, not archived.</p>
+    <ul class="progress-list">
+      <li><span class="dot"></span><span><strong>Web-based chat interface</strong> — a production version of the MCP tooling above, powered directly by the Anthropic API rather than a local desktop client.</span></li>
+      <li><span class="dot"></span><span><strong>OpenTelemetry tracing</strong> — per-tool-call latency and error tracking on the MCP server, exported to Jaeger.</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Built by Christopher Rogers. Last updated 2026.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
