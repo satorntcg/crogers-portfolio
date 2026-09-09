@@ -1,4 +1,4 @@
-# chris-rogers-portfolio
+# crogers-portfolio
 
 Personal portfolio page — background, experience, and current projects (SatornTCG platform + MCP server). Static HTML, no build step, deployed via Vercel to [crogers.dev](https://crogers.dev).
 
