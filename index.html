@@ -58,14 +58,6 @@
     border-bottom: 1px solid var(--line);
   }
 
-  .hero-mark {
-    font-family: var(--body);
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    color: var(--brass-dim);
-    margin: 0 0 18px;
-  }
-
   h1.name {
     font-family: var(--display);
     font-weight: 600;
@@ -80,6 +72,35 @@
     color: var(--parchment-dim);
     max-width: 46ch;
     margin: 0 0 28px;
+  }
+
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--verdigris);
+    background: rgba(107, 148, 132, 0.12);
+    border: 1px solid rgba(107, 148, 132, 0.4);
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin: 0 0 20px;
+  }
+
+  .status-pill .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--verdigris);
+    margin: 0;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
   }
 
   .links {
@@ -341,9 +362,9 @@
 <div class="wrap">
 
   <header class="hero">
-    <p class="hero-mark">satorntcg</p>
     <h1 class="name">Christopher Rogers</h1>
-    <p class="role">Director, AI Center of Excellence at Mastercard by day — leading enterprise AI and data platforms at scale. Outside of that, I build and run SatornTCG, a trading-card resale business, using it as a proving ground for the same class of tools I work with professionally, including hands-on MCP and LLM tool-use.</p>
+    <p class="status-pill"><span class="dot"></span>Open to new opportunities</p>
+    <p class="role">Most recently Director, AI Center of Excellence at Mastercard — leading enterprise AI and data platforms at scale. Outside of that, I build and run SatornTCG, a trading-card resale business, using it as a proving ground for the same class of tools I work with professionally, including hands-on MCP and LLM tool-use.</p>
     <nav class="links">
       <a href="Christopher_Rogers_Resume.pdf" target="_blank" rel="noopener">Resume</a>
       <a href="https://www.linkedin.com/in/chris-rogers-ai" target="_blank" rel="noopener">LinkedIn</a>
