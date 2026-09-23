@@ -438,11 +438,13 @@
           <span class="chip">Node.js</span>
           <span class="chip">MCP SDK</span>
           <span class="chip">Supabase JS</span>
+          <span class="chip">OpenTelemetry</span>
+          <span class="chip">Jaeger</span>
         </div>
         <div class="card-links">
           <a href="https://github.com/satorntcg/satorntcg-mcpserver" target="_blank" rel="noopener">Repo</a>
         </div>
-        <p class="card-note">Diagnosed and fixed a Windows TLS-interception issue that only surfaced when the server was launched by a GUI client rather than a terminal — documented in the README. Built as hands-on follow-through on MCP: Hands-On with Agentic AI.</p>
+        <p class="card-note">Diagnosed and fixed a Windows TLS-interception issue that only surfaced when the server was launched by a GUI client rather than a terminal — documented in the README. Every tool call is traced end-to-end to Jaeger, with each Supabase query broken out into its own child span, so a slow call shows whether it's the database or the handler logic. Built as hands-on follow-through on MCP: Hands-On with Agentic AI.</p>
       </article>
 
     </div>
@@ -450,10 +452,9 @@
 
   <section id="progress">
     <h2 class="section-title">Currently building</h2>
-    <p class="section-sub">Both projects are active, not archived.</p>
+    <p class="section-sub">Still active, not archived.</p>
     <ul class="progress-list">
       <li><span class="dot"></span><span><strong>Web-based chat interface</strong> — a production version of the MCP tooling above, powered directly by the Anthropic API rather than a local desktop client.</span></li>
-      <li><span class="dot"></span><span><strong>OpenTelemetry tracing</strong> — per-tool-call latency and error tracking on the MCP server, exported to Jaeger.</span></li>
     </ul>
   </section>
 
