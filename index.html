@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Christopher Rogers — Builder</title>
+<title>Christopher Rogers — Enterprise AI Platform Architect</title>
+<meta name="description" content="Christopher Rogers: enterprise AI and data platform leader (18+ years, Mastercard) building hands-on agentic AI systems with MCP, LLM tool calling, OpenTelemetry, and AI evaluations.">
+<meta name="author" content="Christopher Rogers">
+<link rel="canonical" href="https://www.crogers.dev/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.crogers.dev/">
+<meta property="og:title" content="Christopher Rogers — Enterprise AI Platform Architect">
+<meta property="og:description" content="Enterprise AI platform leadership plus hands-on agentic AI engineering: MCP, tool calling, observability, and evaluation.">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -348,6 +356,208 @@
     font-weight: 600;
   }
 
+  /* ---------- Hero headline ---------- */
+
+  p.headline {
+    font-family: var(--display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--brass);
+    margin: 0 0 6px;
+    letter-spacing: 0.02em;
+  }
+
+  p.tagline {
+    font-size: 1.05rem;
+    color: var(--parchment);
+    margin: 0 0 18px;
+    max-width: 52ch;
+  }
+
+  p.focus {
+    font-size: 0.92rem;
+    color: var(--parchment-dim);
+    margin: -12px 0 28px;
+    max-width: 60ch;
+  }
+
+  p.focus strong { color: var(--parchment); font-weight: 600; }
+
+  /* ---------- Feature project ---------- */
+
+  .feature {
+    background: var(--ink-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px 24px 24px;
+    margin-bottom: 28px;
+  }
+
+  .feature .card-kicker {
+    color: var(--ink);
+    background: var(--verdigris);
+  }
+
+  h4.sub {
+    font-family: var(--display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--brass);
+    letter-spacing: 0.03em;
+    margin: 28px 0 10px;
+  }
+
+  p.body {
+    font-size: 0.94rem;
+    color: var(--parchment-dim);
+    margin: 0 0 12px;
+    max-width: 64ch;
+  }
+
+  ul.ticks {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul.ticks li {
+    position: relative;
+    padding: 5px 0 5px 18px;
+    font-size: 0.92rem;
+    color: var(--parchment-dim);
+  }
+
+  ul.ticks li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.95em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--verdigris);
+  }
+
+  ul.ticks.planned li::before {
+    background: transparent;
+    border: 1px solid var(--ember);
+  }
+
+  ul.ticks strong { color: var(--parchment); font-weight: 600; }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 680px) {
+    .split { grid-template-columns: 1fr; }
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    font-family: var(--body);
+  }
+
+  .tag.done { color: var(--verdigris); border: 1px solid rgba(107, 148, 132, 0.5); }
+  .tag.next { color: #D07A66; border: 1px solid rgba(178, 75, 56, 0.6); }
+
+  /* ---------- Architecture diagram ---------- */
+
+  .arch {
+    margin: 4px 0 8px;
+  }
+
+  .arch-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .arch-node {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 10px 10px;
+    background: var(--ink);
+    text-align: center;
+  }
+
+  .arch-node b {
+    display: block;
+    font-family: var(--display);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--parchment);
+  }
+
+  .arch-node span {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--parchment-dim);
+    margin-top: 3px;
+    line-height: 1.35;
+  }
+
+  .arch-node.accent { border-color: var(--verdigris); }
+
+  .arch-arrow {
+    align-self: center;
+    color: var(--brass);
+    font-size: 1rem;
+  }
+
+  .arch-otel {
+    margin-top: 10px;
+    border: 1px dashed var(--brass-dim);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 0.76rem;
+    color: var(--parchment-dim);
+    text-align: center;
+  }
+
+  .arch-otel b { color: var(--brass); font-weight: 600; }
+
+  @media (max-width: 680px) {
+    .arch-flow { grid-template-columns: 1fr; }
+    .arch-arrow { justify-self: center; transform: rotate(90deg); }
+  }
+
+  /* ---------- Skills ---------- */
+
+  .skill-groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 760px) {
+    .skill-groups { grid-template-columns: 1fr; }
+  }
+
+  .skill-group h3 {
+    font-family: var(--display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--parchment);
+    margin: 0 0 4px;
+  }
+
+  .skill-group p.skill-note {
+    font-size: 0.78rem;
+    color: var(--brass-dim);
+    margin: 0 0 12px;
+  }
+
   /* ---------- Footer ---------- */
 
   footer {
@@ -364,7 +574,10 @@
   <header class="hero">
     <h1 class="name">Christopher Rogers</h1>
     <p class="status-pill"><span class="dot"></span>Open to new opportunities</p>
-    <p class="role">Most recently Director, AI Center of Excellence at Mastercard — leading enterprise AI and data platforms at scale. Outside of that, I build and run SatornTCG, a trading-card resale business, using it as a proving ground for the same class of tools I work with professionally, including hands-on MCP and LLM tool-use.</p>
+    <p class="headline">Enterprise AI Platform Architect &amp; Engineering Leader</p>
+    <p class="tagline">Building reliable, secure, and scalable AI platforms — from enterprise infrastructure to agentic AI.</p>
+    <p class="role">18+ years architecting and leading enterprise AI and data platforms at Mastercard, most recently as Director, AI Center of Excellence — supporting 2,000+ users and mission-critical analytics at global scale. I pair that with hands-on engineering in generative AI: Model Context Protocol (MCP) servers, LLM tool calling, OpenTelemetry, and AI evaluation.</p>
+    <p class="focus"><strong>Current focus:</strong> agentic AI architecture, AI observability, AI security, cloud AI platforms, and production-ready AI engineering.</p>
     <nav class="links">
       <a href="Christopher_Rogers_Resume.pdf" target="_blank" rel="noopener">Resume</a>
       <a href="https://www.linkedin.com/in/chris-rogers-ai" target="_blank" rel="noopener">LinkedIn</a>
@@ -376,7 +589,7 @@
 
   <section id="about">
     <h2 class="section-title">Background</h2>
-    <p class="section-sub">18+ years scaling AI and data platforms in Fortune 500 environments — most recently leading global engineering teams at Mastercard supporting 2,000+ users on enterprise AI infrastructure, including Kubernetes-based ML platforms and internal LLM tooling. The projects below are where I get hands-on personally with current agentic-AI tooling, including the Model Context Protocol.</p>
+    <p class="section-sub">18+ years scaling AI and data platforms in Fortune 500 environments — most recently leading a global engineering team at Mastercard on enterprise AI infrastructure, including Kubernetes-based ML platforms, Cloudera AI, and internal LLM tooling. Deep roots in Kubernetes, distributed systems, platform engineering, and enterprise security.</p>
 
     <ul class="exp-list">
       <li>
@@ -385,7 +598,7 @@
           <span class="exp-dates">2021–2026</span>
         </div>
         <span class="exp-company">Mastercard</span>
-        <p class="exp-highlight">Led a global team of 11 engineers supporting 2,000+ users; migrated 6,000 notebooks across 1,000+ servers to Cloudera AI, and built an AI-powered support chatbot that cut ticket volume 30%.</p>
+        <p class="exp-highlight">Led a global team of 11 engineers supporting 2,000+ users; migrated 6,000 notebooks across 1,000+ servers to Cloudera AI at 99.9% uptime, moved key workloads to Kubernetes-based ML infrastructure (MTTR down 60%), and built an AI-powered support chatbot that cut ticket volume 30%.</p>
       </li>
       <li>
         <div class="exp-head">
@@ -404,24 +617,78 @@
         <p class="exp-highlight">Drove Hadoop modernization scaling beyond 2 petabytes and led enterprise reporting migration off Business Objects, cutting platform costs 33%.</p>
       </li>
     </ul>
-    <p class="exp-more">Full history, including earlier roles at PepsiCo and education/certifications (MBA, BS Computer Science, MCP: Hands-On with Agentic AI), is in the <a href="Christopher_Rogers_Resume.pdf" target="_blank" rel="noopener">resume</a>.</p>
+    <p class="exp-more">Full history, including earlier roles at PepsiCo and education (MBA, BS Computer Science), is in the <a href="Christopher_Rogers_Resume.pdf" target="_blank" rel="noopener">resume</a>.</p>
   </section>
 
   <section id="work">
-    <h2 class="section-title">Projects</h2>
-    <p class="section-sub">Two pieces of the same system: the commerce platform the business runs on, and the tooling that lets an LLM query it directly.</p>
+    <h2 class="section-title">Featured project: SatornTCG AI Assistant</h2>
+    <p class="section-sub">An MCP server that lets an AI assistant work against the live data of a real trading-card resale business, built with the observability, testing, and access controls I'd expect of an enterprise platform.</p>
+
+    <article class="feature" aria-labelledby="mcp-title">
+      <span class="card-kicker">In daily use</span>
+      <h3 class="card-title" id="mcp-title">satorntcg-mcpserver</h3>
+
+      <h4 class="sub">The problem</h4>
+      <p class="body">Running a resale business means constant questions: what's underpriced, which box paid off, which orders still need listings. Answering them meant clicking through dashboards. This server exposes the business's inventory, pricing, P&amp;L, and order data as standardized tools, so an assistant like Claude can answer from live data instead of a demo set.</p>
+
+      <h4 class="sub">Architecture</h4>
+      <figure class="arch" role="img" aria-label="Architecture: an AI assistant calls the MCP server, which runs application tools that query Supabase and PostgreSQL. OpenTelemetry traces every step to Jaeger, and agent metrics go to Prometheus and Grafana.">
+        <div class="arch-flow">
+          <div class="arch-node"><b>AI Assistant</b><span>Claude Desktop / Code, or a custom CLI agent</span></div>
+          <div class="arch-arrow" aria-hidden="true">&#8594;</div>
+          <div class="arch-node accent"><b>MCP Server</b><span>Node.js, tool discovery &amp; execution over stdio</span></div>
+          <div class="arch-arrow" aria-hidden="true">&#8594;</div>
+          <div class="arch-node"><b>Application Tools</b><span>Schemas, input validation, limits</span></div>
+          <div class="arch-arrow" aria-hidden="true">&#8594;</div>
+          <div class="arch-node"><b>Supabase / PostgreSQL</b><span>Inventory, pricing, P&amp;L views</span></div>
+        </div>
+        <div class="arch-otel"><b>OpenTelemetry</b> across every hop &rarr; distributed traces in <b>Jaeger</b> &middot; agent metrics in <b>Prometheus / Grafana</b></div>
+      </figure>
+
+      <h4 class="sub">Key engineering</h4>
+      <ul class="ticks">
+        <li><strong>MCP tool layer</strong> — 11 tools covering inventory, pricing, box and business P&amp;L, eBay listings, TCGplayer order sync, and eBay deal scanning, each published with a JSON input schema for discovery and execution.</li>
+        <li><strong>Validated, bounded queries</strong> — server-side argument validation with filtering, sorting, and hard row limits, since the low-level MCP server doesn't enforce schemas itself.</li>
+        <li><strong>Agent runner with guardrails</strong> — a CLI agent on the Claude API that offers only read-only tools, checks every argument against the tool's schema before calling it, and stops after 5 tool rounds.</li>
+        <li><strong>Resilient integrations</strong> — bounded retries with jittered backoff for idempotent HTTP reads only. Write calls never retry.</li>
+      </ul>
+
+      <h4 class="sub">Testing &amp; observability</h4>
+      <ul class="ticks">
+        <li><strong>78 automated tests passing</strong> (Node test runner): argument validation, an MCP integration test that starts the real server and checks tool discovery, agent loop logic, retry behavior, and telemetry export.</li>
+        <li><strong>LLM evaluations</strong> — a live Claude API eval checks tool selection and arguments for natural-language questions, and checks that the model answers directly, asks for clarification, or declines when no tool fits. Repeat runs measure consistency.</li>
+        <li><strong>Distributed tracing</strong> — every tool call is a span with each database query as a child span, so slow calls are flagged automatically and you can see whether time went to the database or the handler. Trace context is passed from agent to server through MCP request metadata, so one trace covers the whole request.</li>
+        <li><strong>Metrics</strong> — request, tool-call, latency, and token-usage metrics through an OpenTelemetry Collector into Prometheus and Grafana. Labels are kept to an allowlist, so prompts and data never end up in metric labels.</li>
+      </ul>
+
+      <div class="stack" style="margin-top: 24px;">
+        <span class="chip">Node.js</span>
+        <span class="chip">MCP SDK</span>
+        <span class="chip">Claude API</span>
+        <span class="chip">Supabase / PostgreSQL</span>
+        <span class="chip">OpenTelemetry</span>
+        <span class="chip">Jaeger</span>
+        <span class="chip">Prometheus</span>
+        <span class="chip">Grafana</span>
+        <span class="chip">Docker</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/satorntcg/satorntcg-mcpserver" target="_blank" rel="noopener">GitHub repo</a>
+        <a href="https://github.com/satorntcg/satorntcg-mcpserver#observability" target="_blank" rel="noopener">Observability write-up</a>
+      </div>
+    </article>
 
     <div class="binder">
-
       <article class="card brass">
         <span class="card-kicker">Live product</span>
         <h3 class="card-title">satorntcg-webapp</h3>
-        <p class="card-desc">The commerce platform behind SatornTCG: inventory, pricing alerts, eBay/TCGplayer listing management, and profit &amp; loss tracking for a live trading-card resale operation, backed by Postgres.</p>
+        <p class="card-desc">The commerce platform behind SatornTCG: inventory, price alerts, eBay/TCGplayer listing management, sales and P&amp;L reporting, and a RAG-based rules assistant, on Postgres with row-level security.</p>
         <div class="stack">
-          <span class="chip">Vite</span>
           <span class="chip">React</span>
+          <span class="chip">Vite</span>
           <span class="chip">Supabase</span>
           <span class="chip">Postgres</span>
+          <span class="chip">pgvector</span>
           <span class="chip">Edge Functions</span>
         </div>
         <div class="card-links">
@@ -431,35 +698,109 @@
       </article>
 
       <article class="card verdigris">
-        <span class="card-kicker">Developer tool</span>
-        <h3 class="card-title">satorntcg-mcpserver</h3>
-        <p class="card-desc">An MCP server that exposes the same inventory, pricing, and P&amp;L data as callable tools for LLM clients — so an AI assistant can answer real questions against live business data instead of a canned demo set.</p>
-        <div class="stack">
-          <span class="chip">Node.js</span>
-          <span class="chip">MCP SDK</span>
-          <span class="chip">Supabase JS</span>
-          <span class="chip">OpenTelemetry</span>
-          <span class="chip">Jaeger</span>
-        </div>
-        <div class="card-links">
-          <a href="https://github.com/satorntcg/satorntcg-mcpserver" target="_blank" rel="noopener">Repo</a>
-        </div>
-        <p class="card-note">Diagnosed and fixed a Windows TLS-interception issue that only surfaced when the server was launched by a GUI client rather than a terminal — documented in the README. Every tool call is traced end-to-end to Jaeger, with each Supabase query broken out into its own child span, so a slow call shows whether it's the database or the handler logic. Built as hands-on follow-through on MCP: Hands-On with Agentic AI.</p>
+        <span class="card-kicker">Development status</span>
+        <h3 class="card-title">Currently building</h3>
+        <ul class="ticks planned">
+          <li><strong>Web chat interface</strong> — a hosted version of the assistant on the Claude API, replacing the local desktop client.</li>
+          <li><strong>Remote HTTP transport</strong> with authentication, alongside today's local stdio transport.</li>
+          <li><strong>Hosted tracing backend</strong> and Grafana dashboards for the agent metrics.</li>
+          <li><strong>Larger eval set</strong> covering more tools and adversarial prompts.</li>
+        </ul>
       </article>
-
     </div>
   </section>
 
-  <section id="progress">
-    <h2 class="section-title">Currently building</h2>
-    <p class="section-sub">Still active, not archived.</p>
+  <section id="security">
+    <h2 class="section-title">AI security &amp; observability</h2>
+    <p class="section-sub">An agent that can query and change business data is a platform like any other: it needs access control, monitoring, and regression testing. What's built and what's next:</p>
+
+    <div class="split">
+      <div>
+        <h4 class="sub" style="margin-top: 0;">Built in SatornTCG <span class="tag done">Implemented</span></h4>
+        <ul class="ticks">
+          <li><strong>Least-privilege tool access</strong> — the agent gets an allowlist of read-only tools, and any other tool request is rejected before it reaches the server.</li>
+          <li><strong>Input validation</strong> at two layers: schema checks in the agent, plus validation and row limits on the server.</li>
+          <li><strong>Data protection in telemetry</strong> — agent traces and metrics leave out prompts, message content, tool results, and credentials, and a test confirms retry telemetry never records headers.</li>
+          <li><strong>Secrets handling</strong> — credentials stay in local environment files and out of source control. The web app uses Postgres row-level security across all its views.</li>
+          <li><strong>Tracing and tool monitoring</strong>, with slow tool calls flagged automatically.</li>
+          <li><strong>Evals as regression tests</strong> for tool selection and refusal behavior.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="sub" style="margin-top: 0;">Studying &amp; planned <span class="tag next">Not yet built</span></h4>
+        <ul class="ticks planned">
+          <li><strong>Human approval</strong> enforced on the server for tools that write data, rather than relying on the client's confirmation prompt.</li>
+          <li><strong>Prompt-injection defenses</strong> for tool results that contain untrusted third-party text, such as marketplace listing titles.</li>
+          <li><strong>Authentication and per-user authorization</strong> for remote MCP access.</li>
+          <li><strong>Audit logging and governance</strong> — a durable record of who triggered which agent action, and why.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-sub">Grouped by where each skill comes from: years in production, current hands-on building, and recent cloud coursework.</p>
+
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>Enterprise platform experience</h3>
+        <p class="skill-note">Production, at scale</p>
+        <div class="stack">
+          <span class="chip">Kubernetes</span>
+          <span class="chip">Cloudera AI</span>
+          <span class="chip">Hadoop &amp; distributed data</span>
+          <span class="chip">Apache Spark</span>
+          <span class="chip">JupyterHub</span>
+          <span class="chip">Python</span>
+          <span class="chip">Platform engineering</span>
+          <span class="chip">Reliability &amp; SRE</span>
+          <span class="chip">Security &amp; governance</span>
+          <span class="chip">CI/CD (Jenkins, Chef)</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Hands-on AI engineering</h3>
+        <p class="skill-note">Built in SatornTCG</p>
+        <div class="stack">
+          <span class="chip">Model Context Protocol</span>
+          <span class="chip">LLM tool calling</span>
+          <span class="chip">Agentic AI architecture</span>
+          <span class="chip">Claude API</span>
+          <span class="chip">RAG / pgvector</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Supabase / PostgreSQL</span>
+          <span class="chip">OpenTelemetry &amp; Jaeger</span>
+          <span class="chip">AI evaluation &amp; testing</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Cloud AI platform training</h3>
+        <p class="skill-note">Coursework, not production use</p>
+        <div class="stack">
+          <span class="chip">AWS fundamentals</span>
+          <span class="chip">Amazon Bedrock</span>
+          <span class="chip">Amazon SageMaker AI</span>
+          <span class="chip">Microsoft AI</span>
+          <span class="chip">Databricks</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="training">
+    <h2 class="section-title">Professional development</h2>
+    <p class="section-sub">Selected recent training. These are course completions unless marked as a credential.</p>
     <ul class="progress-list">
-      <li><span class="dot"></span><span><strong>Web-based chat interface</strong> — a production version of the MCP tooling above, powered directly by the Anthropic API rather than a local desktop client.</span></li>
+      <li><span class="dot" style="background: var(--verdigris);"></span><span><strong>Model Context Protocol (MCP): Hands-On with Agentic AI</strong> — put into practice in the SatornTCG MCP server above.</span></li>
+      <li><span class="dot" style="background: var(--verdigris);"></span><span><strong>Building Generative AI Applications Using Amazon Bedrock</strong> · <strong>Amazon SageMaker AI Getting Started</strong> · <strong>AWS Cloud Practitioner Essentials</strong> (AWS Skill Builder courses)</span></li>
+      <li><span class="dot" style="background: var(--verdigris);"></span><span><strong>Microsoft Certified: AI Business Professional</strong> (credential)</span></li>
+      <li><span class="dot" style="background: var(--verdigris);"></span><span><strong>Academy Accreditation – Databricks Fundamentals</strong> · <strong>Generative AI for Business Leaders</strong> · <strong>Foundations of Responsible AI</strong></span></li>
     </ul>
   </section>
 
   <footer>
-    <p>Built by Christopher Rogers. Last updated 2026.</p>
+    <p>Built by Christopher Rogers. Last updated November 2026.</p>
   </footer>
 
 </div>
